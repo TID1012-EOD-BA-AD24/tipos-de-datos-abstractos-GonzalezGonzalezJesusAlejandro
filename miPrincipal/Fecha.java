@@ -37,12 +37,9 @@ public class Fecha {
 			anio-- ;
 		}
 		
-		nuevaFecha= new Fecha(dia,mes,anio);{
+		nuevaFecha= new Fecha(dia,mes,anio);
 		//colocar el código faltante
 		return nuevaFecha;
-		}
-		
-
 	}
 	public Fecha addDias(int d) {
 		//convertir la fecha a dias y le sumamos d
@@ -112,4 +109,7 @@ public class Fecha {
 	public void setAnio(int anio) {
 		this.anio = anio;
 	}
-}
+	
+	
+
+} 
