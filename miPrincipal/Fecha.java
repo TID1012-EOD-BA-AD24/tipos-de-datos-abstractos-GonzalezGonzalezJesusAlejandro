@@ -46,6 +46,8 @@ public class Fecha {
 		int suma =fechaToDias()+d;
 		//la fecha resultante se separa en dia, mes y año
 		//coloca aquí el código faltante
+		
+		
 		return diasToFecha(suma);
 	}
 	

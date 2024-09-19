@@ -1,6 +1,6 @@
 package miPrincipal;
 
-import java.util.Scanner;
+import java.util.*;
 //cambio
 
 public class Principal {
@@ -19,7 +19,7 @@ public class Principal {
             System.out.println("5) FECHA   ");
             System.out.println("6) CADENA  ");
             System.out.println("7) NUMEROTE");
-            System.out.println("8) CUENTA_CHEQUES");
+            System.out.println("8) CUENTA CHEQUES");
             System.out.println("9) PUNTO");
             System.out.println("10)TRIANGULO");
             System.out.println("11)POLIGONO");

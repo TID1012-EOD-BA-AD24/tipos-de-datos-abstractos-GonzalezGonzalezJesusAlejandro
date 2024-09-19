@@ -20,26 +20,28 @@ public class Conjunto {
 	public Conjunto añadir(Object elemento)
 	{
 		//coloque aquí el código faltante
-		Conjunto c = new Conjunto();
-		if (!pertenece(elemento))
 		{
-			/*Verifica si hay posiciones libres
-			* en caso contrario amplia el conjunto
-			*/
-			if(cardinal ==capacidad)
+			Conjunto c = new Conjunto();
+			if (!pertenece(elemento))
 			{
-				Object [] nuevoCto;
-				nuevoCto = new Object[capacidad + M];
-				for(int k = 0;k<capacidad;k++)
-				nuevoCto[k] = cto[k];
-				capacidad += M;
-				cto = nuevoCto;
-				
+				/*Verifica si hay posiciones libres
+				* en caso contrario amplia el conjunto
+				*/
+				if(cardinal ==capacidad)
+				{
+					Object [] nuevoCto;
+					nuevoCto = new Object[capacidad + M];
+					for(int k = 0;k<capacidad;k++)
+					nuevoCto[k] = cto[k];
+					capacidad += M;
+					cto = nuevoCto;
+					
+				}
+				cto[cardinal++] = elemento;
+				c.cto = cto;
 			}
-			cto[cardinal++] = elemento;
-			c.cto = cto;
+			return c;
 		}
-		return c;
 		
 		
 	}

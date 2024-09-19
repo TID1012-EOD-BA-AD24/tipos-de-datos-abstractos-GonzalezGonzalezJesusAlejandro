@@ -5,7 +5,7 @@ public class Rational{
 
     public Rational(){
        //coloca aquí el código faltante
-       r[0]=0;
+       r[0]=1;
        r[1]=1;
     }
 
@@ -15,8 +15,8 @@ public class Rational{
             throw new PosicionIlegalException();
         }
        //coloca aquí el código faltante
-         r[0]=a;
-         r[1]=b;
+       r[0]=a;
+       r[1]=b;
     }
     
     public int getNumerador(){
@@ -34,16 +34,15 @@ public class Rational{
 
     public Rational add(Rational a, Rational b){
         Rational x = new Rational();
-        x.setNumerador(a.getDenominador() * b.getNumerador() + b.getDenominador()* a.getNumerador());
+        x.setNumerador(a.getDenominador() * b.getNumerador() + b.getDenominador() * a.getNumerador());
         x.setDenominador(a.getDenominador() * b.getDenominador());
         return x;
     }
     public Rational add(Rational a){
-      //coloca aquí el código faltante
-      Rational x = new Rational();
-      x.setNumerador(this.getNumerador()*a.getDenominador()+this.getDenominador()*a.getNumerador());
-      x.setDenominador(this.getDenominador()*a.getDenominador());
-      return x;
+        Rational x = new Rational();
+        x.setNumerador(this.getNumerador() * a.getDenominador() + this.getDenominador() *a.getNumerador());
+        x.setDenominador(this.getDenominador() * a.getDenominador());
+        return x;
     }
 
     public Rational mult(Rational a, Rational b){
@@ -55,8 +54,8 @@ public class Rational{
     public Rational mult(Rational a){
        //coloca aquí el código faltante
        Rational x = new Rational();
-       x.setNumerador(this.getNumerador()*a.getNumerador());
-       x.setDenominador(this.getDenominador()*a.getDenominador());
+       x.setNumerador(this.getNumerador() * a.getNumerador());
+       x.setDenominador(this.getDenominador() * a.getDenominador());
        return x;
     }
     public boolean equal(Rational a,Rational b){
@@ -66,7 +65,7 @@ public class Rational{
     public boolean equal(Rational a){
         //coloca aquí el código faltante
         return (this.getDenominador()*a.getNumerador() == 
-        a.getDenominador()*this.getNumerador());
+               a.getDenominador()*this.getNumerador());
     }
     @Override
     public String toString() {
