@@ -14,10 +14,9 @@ public class Fecha {
 	//asignar la fecha expresada en dias a los atributos
 	public Fecha diasToFecha(int i)
 	{
-		
 		Fecha nuevaFecha;
 		//dividimos por 360 y obtenemos el año
-		anio = i/360;
+		anio = (int)i/360;
 		//del resto o residuo de la división anterior
 		//podemos obtener el mes y el dia
 		int resto = i%360;
@@ -41,9 +40,7 @@ public class Fecha {
 		nuevaFecha= new Fecha(dia,mes,anio);
 		//colocar el código faltante
 		return nuevaFecha;
-
 	}
-
 	public Fecha addDias(int d) {
 		//convertir la fecha a dias y le sumamos d
 		int suma =fechaToDias()+d;
