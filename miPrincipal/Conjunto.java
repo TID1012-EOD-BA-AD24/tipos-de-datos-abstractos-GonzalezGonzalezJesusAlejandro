@@ -19,66 +19,63 @@ public class Conjunto {
 	//añade un elemento si no está en el conjunto
 	public Conjunto añadir(Object elemento)
 	{
-		//coloque aquí el código faltante
-		Conjunto c = new Conjunto();
-		if (!pertenece(elemento))
-		{
-			/*Verifica si hay posiciones libres
-			* en caso contrario amplia el conjunto
-			*/
-			if(cardinal ==capacidad)
-			{
-				Object [] nuevoCto;
-				nuevoCto = new Object[capacidad + M];
-				for(int k = 0;k<capacidad;k++)
-				nuevoCto[k] = cto[k];
-				capacidad += M;
-				cto = nuevoCto;
-				
-			}
-			cto[cardinal++] = elemento;
-			c.cto = cto;
+		if (pertenece(elemento)) {
+			return this; // El elemento ya está presente, no se hace nada
 		}
-		return c;
+	
+		// Verificar si el conjunto está lleno
+		if (cardinal >= capacidad) {
+			// Aumentar la capacidad
+			capacidad *= 2;
+			Object[] nuevoCto = new Object[capacidad];
+			System.arraycopy(cto, 0, nuevoCto, 0, cto.length);
+			cto = nuevoCto;
+		}
+	
+		// Agregar el nuevo elemento
+		cto[cardinal++] = elemento;
+		return this;
+		//coloque aquí el código faltante
 		
 		
 	}
-	//quita el elemento del conjunto
+	
 
 	public Conjunto retirar(Object elemento)
 	{
-		//coloque aquí el código faltante
-		Conjunto c = new Conjunto();
+		int i;
+    for (i = 0; i < cardinal; i++) {
+        if (cto[i].equals(elemento)) {
+            break;
+        }
+    }
 
-		if(pertenece(elemento))
-		{
-			int k = 0;
-			while (!cto[k].equals(elemento))
-			   k++;
-			/* desde el elemento k hasta la última
-			posición
-			* mueve los elementos una posición a la
-			izquierta
-			*/
-			for(;k<cardinal;k++)
-			   cto[k] = cto[k+1];
-			cardinal--;
-			c.cto = cto;
-		}
-		return c;
+    // Si el elemento no está en el conjunto
+    if (i == cardinal) {
+        return this; // No se hace nada
+    }
+
+    // Mover los elementos posteriores hacia la izquierda
+    for (int j = i; j < cardinal - 1; j++) {
+        cto[j] = cto[j + 1];
+    }
+
+    // Decrementar el cardinal
+    cto[--cardinal] = null;
+    return this;
+		//coloque aquí el código faltante
+
 	}
 	//busca si un elemento pertenece al conjunto
 	public boolean pertenece(Object elemento)
 	{
-		//coloque aquí el código faltante
-		int k = 0;
-		boolean encontrado = false;
-		while (k<cardinal && !encontrado)
-		{
-			encontrado = cto[k].equals(elemento);
-			k++;
+		for (int i = 0; i < cardinal; i++) {
+			if (cto[i].equals(elemento)) {
+				return true; // El elemento está en el conjunto
+			}
 		}
-		return encontrado;
+		return false; // El elemento no está en el conjunto
+		//coloque aquí el código faltante
 	}
 	//devuelve el número de elementos
 	public int cardinal()

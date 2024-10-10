@@ -5,19 +5,7 @@ public class Persona {
     private String nombre;
     private Fecha FechaNacimiento;
     //coloca aquí el código faltante
-    public Persona() {
-        dni = "";
-        nombre = "";
-        FechaNacimiento = new Fecha();
-    }
-
-    public Persona(String dni, String nombre, Fecha fechaNacimiento) {
-        this.dni = dni;
-        this.nombre = nombre;
-        FechaNacimiento = fechaNacimiento;
-    }
-
-
+    
     public String getDni() {
         return dni;
     }
@@ -36,8 +24,11 @@ public class Persona {
     public void setFechaNacimiento(Fecha fechaNacimiento) {
         FechaNacimiento = fechaNacimiento;
     }
+    public Persona(String dni, String nombre,Fecha fechaNacimiento){
+        this.dni = dni;
+        this.nombre = nombre;
+        FechaNacimiento = fechaNacimiento;
+    }
     
-
-
     
 }
